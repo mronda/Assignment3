@@ -11,7 +11,7 @@ var listingSchema = new Schema({
     latitude: Number,
     longitude: Number
   },
-  address: String
+  address: String,
   created_at: Date,
   updated_at: Date
 });
@@ -27,6 +27,7 @@ listingSchema.pre('save', function(next) {
   }
   next();
 });
+
 
 /* Use your schema to instantiate a Mongoose model */
 var Listing = mongoose.model('Listing', listingSchema);
